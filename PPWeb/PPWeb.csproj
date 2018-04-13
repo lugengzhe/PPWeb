@@ -76,8 +76,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HtmlPage1.html" />
-    <Content Include="HtmlPage0.html" />
-    <Content Include="jquery-3.3.1.min.js" />
+    <Content Include="example_webtoSql.html" />
+    <Content Include="js\jquery-3.3.1.min.js" />
     <Content Include="Web.config" />
     <Content Include="demo.aspx" />
   </ItemGroup>
@@ -90,6 +90,9 @@
     <Compile Include="demo.aspx.designer.cs">
       <DependentUpon>demo.aspx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="css\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
