@@ -8,11 +8,9 @@
         $(function () {
             $("#btn").click(function () {
                 $.ajax({
-                    type: "post", 
+                    type: "post",
                     url: "WebForm1.aspx",
-                    data: {a:'[{"aa":"bb"}]'},
-                    //contentType: "application/json; charset=utf-8",
-                    //dataType: "json",  
+                    data: '[{"aa":"bb"}]',
                     success: function (data) {
                         console.log(data);
                     },
@@ -25,10 +23,6 @@
     </script>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <Button ID="btn" runat="server" Text="验证用户" />111
-        </div>
-    </form>
+    <Button id="btn">111</Button>
 </body>
 </html>

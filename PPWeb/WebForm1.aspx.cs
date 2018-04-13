@@ -18,13 +18,14 @@ namespace PPWeb
                 if (Request.HttpMethod.ToLower() == "post")
                 {
                     Stream s = System.Web.HttpContext.Current.Request.InputStream;
-                    byte[] b = new byte[s.Length];
-                    s.Read(b, 0, (int)s.Length);
-                    string poststr = System.Text.Encoding.UTF8.GetString(b);
+                    s.Position = 0;
+                    StreamReader reader = new StreamReader(s);
+                    string poststr = reader.ReadToEnd();
+                    //string val = Request["aa"];
+                    s.Close();
                     if (!string.IsNullOrEmpty(poststr))
                     {
                         Response.Write(poststr);
-
                     }
 
                 }
@@ -36,7 +37,7 @@ namespace PPWeb
             }
             catch (Exception exp)
             {
-                Response.Write(exp.Message);  //不能解析来源和目标，不能返回XML数据
+                Response.Write("??");
             }
         }
     }
