@@ -1,1 +1,0 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" ValidateRequest="false" CodeBehind="AjaxCommonIntf.aspx.cs" Inherits="Zj.WebFrame.PC.Web.Votes.AjaxCommonIntf1" %>
