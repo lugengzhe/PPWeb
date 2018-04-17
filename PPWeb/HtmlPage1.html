@@ -4,25 +4,46 @@
     <meta charset="utf-8" />
     <title></title>
     <script src="jquery-3.3.1.min.js"></script>
+  
+</head>
+<body>
+    <div id="choice">
+      <br />  <a ></a>
+    </div>
+    <Button id="getlist">111</Button>
     <script>
         $(function () {
-            $("#btn").click(function () {
+            $("#getlist").click(function () {
                 $.ajax({
                     type: "post",
                     url: "demo.aspx",
-                    data: '[{"aa":"bb"}]',
+                    data: 'req001',
                     success: function (data) {
+                        data = JSON.parse(data);
                         console.log(data);
+                        $.loadlist(data);
                     },
                     error: function (err) {
+                        alert("ajax过程出错,详细见控制台消息");
                         console.log(err);
                     }
                 });
             });
         });
+        $.extend({
+            loadlist: function (data) {
+                matchlist = [];
+                list = data;
+                list.forEach(function (t) {
+                    matchlist.push(JSON.parse(t['uniStr']));
+                    $('#choice').append('<li>' + t['uniStr']+'</li><br />')
+                    
+                })
+            },
+            sigmatch: function () {
+
+            }
+        })
     </script>
-</head>
-<body>
-    <Button id="btn">111</Button>
 </body>
 </html>
